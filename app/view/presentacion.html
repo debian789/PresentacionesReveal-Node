@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %} Perfil{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+
+<section>
+	<h2>Android</h2>
+	<p>
+		Presentacion de android 
+	</p>
+
+	<aside class="notes">
+		android al 100%
+	</aside>
+
+	<a href="/log-out">Salir </a>
+	<br/>
+	 {{ user.username }}
+	<ul id="usuarios">
+		{% for usuario in users %}
+		<li>{{ usuario.username }}</li>
+		{% endfor %}
+	</ul>
+
+	<ul class="listado">
+		{% for post in posts %}
+		<li> {{ post.user.username }} :  {{ post.content }}</li>
+		{% endfor %}
+	</ul>
+</section>
+
+
+<section>
+	<h2>Slides</h2>
+	<p>
+	datos del curso <a href="http://slid.es" target="_blank">http://slid.es</a>.
+	</p>
+</section>
+
+
+
+{% endblock %}
